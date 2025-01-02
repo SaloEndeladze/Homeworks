@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke" verbose="1">
+    <test name="Registration">
+        <classes>
+            <class name="SignifyRegistration"/>
+        </classes>
+    </test>
+
+    <test name="Send Document">
+        <classes>
+            <class name="SignifySendDocument"/>
+        </classes>
+    </test>
+
+    <test name="Forgot Password">
+        <classes>
+            <class name="SignifyForgotPassword"/>
+        </classes>
+    </test>
+
+
+</suite>
