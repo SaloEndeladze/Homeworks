@@ -18,6 +18,7 @@ public class ThirdTask_Homework2 extends BaseURL {
 
         Response response = given()
                 .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
                 .body(userData)
                 .when()
                 .post("/Account/v1/user")

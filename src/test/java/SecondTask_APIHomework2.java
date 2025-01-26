@@ -11,11 +11,12 @@ public class SecondTask_APIHomework2 extends BaseURL {
     @Test
     public void secondTest(){
         LombokData userData = new LombokData();
-        userData.setUserName("salome_endeladze5");
+        userData.setUserName("salome_endeladze7");
         userData.setPassword("Password123!");
 
         Response response = given()
                 .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
                 .body(userData)
                 .when()
                 .post("/Account/v1/user")
