@@ -1,21 +1,21 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Smoke" verbose="1">
-    <test name="Registration">
+<suite name="API tests" verbose="1">
+    <test name="First Scenario">
         <classes>
-            <class name="SignifyRegistration"/>
+            <class name="FinalProject.FinalProject_FirstScenario"/>
         </classes>
     </test>
 
-    <test name="Send Document">
+    <test name="Second Scenario">
         <classes>
-            <class name="SignifySendDocument"/>
+            <class name="FinalProject.FinalProject_SecondScenario"/>
         </classes>
     </test>
 
-    <test name="Forgot Password">
+    <test name="Negative Cases">
         <classes>
-            <class name="SignifyForgotPassword"/>
+            <class name="FinalProject.FinalProject_NegativeCases"/>
         </classes>
     </test>
 
