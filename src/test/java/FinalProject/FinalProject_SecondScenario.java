@@ -3,6 +3,9 @@ package FinalProject;
 import finalProject.FinalProject_BaseURL;
 import finalProject.FinalProject_Response;
 import finalProject.FinalProject_StatusCode;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -21,6 +24,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test(dataProvider = "userData", priority = 1)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Create user")
     public void first(String  id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus) {
 
         Response response = user.CreateUser(id, username, firstName, lastName, email, password, phone, userStatus);
@@ -29,6 +34,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test(dataProvider = "userData", priority = 2)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Get created user")
     public void second(String id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus) {
 
         Response response = user.GetUser(id, username, firstName, lastName, email, password, phone, userStatus);
@@ -59,6 +66,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test (dataProvider = "userData", priority = 3)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Update user")
     public void third(String id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus) {
 
         Response response = user.UpdateUser(id, username, firstName, lastName, email, password, phone, userStatus);
@@ -67,6 +76,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test (dataProvider = "userData", priority = 4)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Get updated user")
     public void fourth(String id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus) {
 
         String updatedName = "salo1";
@@ -87,6 +98,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test (dataProvider = "userData", priority = 5)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Log in to system")
     public void fifth(String id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus){
 
         Response response = user.LogIn(id, username, firstName, lastName, email, password, phone, userStatus);
@@ -97,6 +110,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test (priority = 6)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Log out from system")
     public void sixth(){
 
         Response response = user.LogOut();
@@ -105,6 +120,8 @@ public class FinalProject_SecondScenario extends FinalProject_BaseURL {
     }
 
     @Test (dataProvider = "userData", priority = 7)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Delete user")
     public void seventh(String id, String username, String firstName, String lastName, String email, String password, String phone, String userStatus) {
 
         Response response = user.DeleteUser(id, username, firstName, lastName, email, password, phone, userStatus);

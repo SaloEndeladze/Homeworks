@@ -2,6 +2,9 @@ package FinalProject;
 
 import finalProject.FinalProject_Response;
 import finalProject.FinalProject_StatusCode;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,6 +17,8 @@ public class FinalProject_FirstScenario extends FinalProject_BaseURL {
     private FinalProject_Response order = new FinalProject_Response();
 
     @Test (priority = 1)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Create new order")
     public void first() {
         Response response = order.CreateOrder();
 
@@ -32,6 +37,8 @@ public class FinalProject_FirstScenario extends FinalProject_BaseURL {
     }
 
     @Test (priority = 2)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Get created order")
     public void second() {
         Response response = order.GetOrder();
 
@@ -50,6 +57,8 @@ public class FinalProject_FirstScenario extends FinalProject_BaseURL {
     }
 
     @Test (priority = 3)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Delete an order")
     public void third() {
         Response response = order.DeleteOrder();
 
@@ -60,6 +69,8 @@ public class FinalProject_FirstScenario extends FinalProject_BaseURL {
     }
 
     @Test (priority = 4)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Try to delete already deleted order")
     public void fourth() {
         Response response = order.DeleteOrder();
 
@@ -70,6 +81,8 @@ public class FinalProject_FirstScenario extends FinalProject_BaseURL {
     }
 
     @Test (priority = 5)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Get deleted order")
     public void fifth() {
         Response response = order.GetOrder();
 
